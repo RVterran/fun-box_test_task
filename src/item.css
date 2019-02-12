@@ -1,0 +1,40 @@
+.item {
+    position: relative;
+    background: #ffffff;
+    height: 100%;
+    width: 320px;
+    max-height: 480px;
+    overflow: hidden;
+    padding-top: 25px;
+    padding-left: 50px;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item .weight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: #1698d9;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.item .weight .count {
+    font-size: 42px;
+    line-height: 42px;
+}
+
+.item .weight .description {
+    font-size: 21px;
+    line-height: 21px;
+}

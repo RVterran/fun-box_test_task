@@ -1,32 +1,19 @@
+
 .App {
-  text-align: center;
+    height: 100vh;
+    background: #272727;
+    background: url(./img/pattern.png);
+    background: -moz-linear-gradient(to bottom,rgb(0, 0, 0) 0%,rgb(255, 255, 255) 50%,rgb(0, 0, 0) 100%), url(./img/pattern.png);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0.2) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.2) 90%,rgba(0,0,0,1) 100%), url(./img/pattern.png);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.2) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.2) 90%,rgba(0,0,0,1) 100%), url(./img/pattern.png);
+    display: flex;
+    justify-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1280px;
 }
