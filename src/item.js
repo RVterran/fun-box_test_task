@@ -7,15 +7,16 @@ class Item extends Component {
     return (
       <div className="item">
         <div className="item-container">
-            <h4>Сказочное заморское яство</h4>
-            <h1>Нямушка</h1>
-            <h2>с фуа-гра</h2>
-            <p>10 порций</p>
-            <p>мышь в подарок</p>
+            <h4>{this.props.headText}</h4>
+            <h1>{this.props.titleName}</h1>
+            <h2>{this.props.titleNameWith}</h2>
+            <p>{this.props.subtext1}</p>
+            <p>{this.props.subtext2}</p>
+            <p>{this.props.subtext3}</p>
             <img src={cat}/>
             <div className="weight">
-                <span className="count">0,5</span>
-                <span className="description">кг</span>
+                <span className="count">{this.props.weightCount}</span>
+                <span className="unitMeas">{this.props.unitMeas}</span>
             </div>
         </div>
       </div>
