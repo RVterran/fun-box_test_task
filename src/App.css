@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('./Exo2.0-Thin.otf');
+}
 
 .App {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     background: #272727;
     background: url(./img/pattern.png);
     background: -moz-linear-gradient(to bottom,rgb(0, 0, 0) 0%,rgb(255, 255, 255) 50%,rgb(0, 0, 0) 100%), url(./img/pattern.png);
@@ -10,10 +15,21 @@
     justify-content: center;
 }
 
+.container {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.title {
+    font-size: 36px;
+    color: #ffffff;
+    font-family: 'Exo2';
+    text-align: center;
+}
+
 .item-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1280px;
+    justify-content: space-between;
+    padding: 0 80px;
 }
