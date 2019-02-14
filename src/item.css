@@ -15,6 +15,7 @@
     height: 480px;
     overflow: hidden;
     clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+    margin-bottom: 30px;
 }
 
 .item-container {
@@ -95,4 +96,9 @@
     font-family: 'Trebuchet-regular';
     font-size: 21px;
     line-height: 21px;
+}
+
+.footer-text {
+  color: white;
+  font-size: 12px;
 }
