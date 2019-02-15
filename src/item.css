@@ -15,7 +15,6 @@
     height: 480px;
     overflow: hidden;
     clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
-    margin-bottom: 30px;
 }
 
 .item-container {
@@ -99,6 +98,16 @@
 }
 
 .footer-text {
-  color: white;
-  font-size: 12px;
+  font-family: 'Trebuchet-regular';
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.buy {
+  font-family: 'Trebuchet-regular';
+  color: #1698d9;
+  font-size: 13px;
+  border-bottom: 1px dashed #1698d9;
+  cursor: pointer;
 }

@@ -18,7 +18,7 @@ class App extends Component {
                 subtext2="мышь в подарок"
                 weightCount="0,5"
                 unitMeas="кг"
-                footerText={["Чего сидишь? Порадуй котэ,", <span className='buy'> "купи."</span>]}
+                footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy'>купи.</span>]}
               />
               <Item
                 headText="Сказочное заморское яство"
