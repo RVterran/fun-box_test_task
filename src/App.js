@@ -14,35 +14,41 @@ class App extends Component {
                 headText="Сказочное заморское яство"
                 titleName="Нямушка"
                 titleNameWith="с фуа-гра"
-                subtext1="10 порций"
+                subtext1={[<span className="bold">10</span>, " порций"]}
                 subtext2="мышь в подарок"
                 weightCount="0,5"
                 unitMeas="кг"
+                selectedHoverText="Котэ не одобряет?"
                 footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy'>купи.</span>]}
                 footerTextSelected="Печень утки разварная с артишоками."
+                footerTextDisabled="Печалька, с фуа-гра закончился."
               />
               <Item
                 headText="Сказочное заморское яство"
                 titleName="Нямушка"
                 titleNameWith="с рыбой"
-                subtext1="40 порций"
-                subtext2="2 мыши в подарок"
+                subtext1={[<span className="bold">40</span>, " порций"]}
+                subtext2={[<span className="bold">2</span>, " мыши в подарок"]}
                 weightCount="2"
                 unitMeas="кг"
+                selectedHoverText="Котэ не одобряет?"
                 footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy'>купи.</span>]}
                 footerTextSelected="Головы щучьи с чесноком да свежайшая сёмгушка."
+                footerTextDisabled="Печалька, с рыбой закончился."
               />
               <Item
                 headText="Сказочное заморское яство"
                 titleName="Нямушка"
                 titleNameWith="с курой"
-                subtext1="100 порций"
-                subtext2="5 мышей в подарок"
+                subtext1={[<span className="bold">100</span>, " порций"]}
+                subtext2={[<span className="bold">5</span>, " мышей в подарок"]}
                 subtext3="заказчик доволен"
                 weightCount="5"
                 unitMeas="кг"
+                selectedHoverText="Котэ не одобряет?"
                 footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy' >купи.</span>]}
                 footerTextSelected="Филе из цыплят с трюфелями в бульоне."
+                footerTextDisabled="Печалька, с курой закончился."
                 disabled
               />
             </div>

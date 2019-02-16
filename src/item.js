@@ -8,16 +8,40 @@ class Item extends Component {
     super(props);
 
     this.state = {
-      selected: false
+      selected: false,
+      hover: false
     }
 
   }
 
   componentDidMount() {
     ReactDOM.findDOMNode(this).addEventListener('click', this.buyClickCheck);
+    ReactDOM.findDOMNode(this).addEventListener('mouseenter', this.mouseEnterItemCheck);
+    ReactDOM.findDOMNode(this).addEventListener('mouseleave', this.mouseLeaveItemCheck);
   }
   componentWillUnmount() {
     ReactDOM.findDOMNode(this).removeEventListener('click', this.buyClickCheck);
+    ReactDOM.findDOMNode(this).removeEventListener('mouseenter', this.mouseEnterItemCheck);
+    ReactDOM.findDOMNode(this).removeEventListener('mouseleave', this.mouseLeaveItemCheck);
+  }
+
+  mouseEnterItemCheck = (e) => {
+      if (e.target.classList.contains('item') && !this.state.hover && this.state.selected) {
+          if (!this.state.hover) {
+              console.log('change!');
+              this.setState(state => ({
+                  hover: true
+              }));
+          }
+      }
+  }
+
+  mouseLeaveItemCheck = (e) => {
+      if (e.target.classList.contains('item') && this.state.hover) {
+          this.setState(state => ({
+              hover: false
+          }));
+      }
   }
 
   buyClickCheck = (e) => {
@@ -31,17 +55,22 @@ class Item extends Component {
       this.setState(state => ({
         selected: !state.selected
       }));
+
+      if (this.state.hover) {
+          this.setState(state => ({
+              hover: false
+          }));
+      }
     }
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <div className={"item " + (this.props.disabled ? 'disabled' : '')}>
-        <div onClick={this.select} className={this.state.selected ? 'selected' : ''}>
+        <div onClick={this.select} className={(this.state.selected ? 'selected ' + (this.state.hover ? 'selected-hover' : '') : '')}>
           <div className="item-container">
-              <h4>{this.props.headText}</h4>
+              <h4 className={this.state.hover ? 'hide' : 'show'}>{this.props.headText}</h4>
+              <h4 className={"selected-text " + (this.state.hover ? 'show' : 'hide')}>{this.props.selectedHoverText}</h4>
               <h1>{this.props.titleName}</h1>
               <h2>{this.props.titleNameWith}</h2>
               <p>{this.props.subtext1}</p>
@@ -54,8 +83,9 @@ class Item extends Component {
               </div>
           </div>
         </div>
-        <p className={"footer-text " + (this.state.selected ? 'hide' : 'show')}>{this.props.footerText}</p>
+        <p className={"footer-text " + (this.state.selected || this.props.disabled ? 'hide' : 'show')}>{this.props.footerText}</p>
         <p className={"footer-text footer-text-selected " + (this.state.selected ? 'show' : 'hide')}>{this.props.footerTextSelected}</p>
+        <p className={"footer-text footer-text-disabled " + (this.props.disabled ? 'show' : 'hide')}>{this.props.footerTextDisabled}</p>
       </div>
     );
   }

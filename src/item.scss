@@ -82,6 +82,10 @@ $disabled_color: #b3b3b3;
             margin: 0 0 5px 0;
         }
 
+        .bold {
+            font-family: 'Trebuchet-bold';
+        }
+
         img {
             width: 100%;
             position: absolute;
@@ -116,6 +120,18 @@ $disabled_color: #b3b3b3;
                 line-height: 21px;
             }
         }
+
+        .selected-text {
+            color: $selected_hover_color;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
     }
 
     .footer-text {
@@ -146,37 +162,47 @@ $disabled_color: #b3b3b3;
         display: none;
     }
 
-    .selected {
-        background: $selected_color;
-
-        .weight {
-            background: $selected_color;
-        }
-    }
-
-    .selected {
-        &:hover {
-            background: $selected_hover_color;
+    & > .selected {
+        &.selected-hover {
+            background: $selected_hover_color !important;
 
             .weight {
-                background: $selected_hover_color;
+                background: $selected_hover_color !important;
             }
+        }
+
+        background: $selected_color !important;
+
+        .weight {
+            background: $selected_color !important;
         }
     }
 }
 
-.disabled > div {
-    background: $disabled_color;
-
-    .item-container > .weight {
-        background: $disabled_color;
+.disabled {
+    .footer-text-disabled {
+        color: #ffff66;
     }
 
-    &:hover {
+    & > div {
         background: $disabled_color;
 
-        .item-container > .weight {
+        .item-container {
+            h1, h2, h4, p {
+                color: $disabled_color;
+            }
+
+            & > .weight {
+                background: $disabled_color;
+            }
+        }
+
+        &:hover {
             background: $disabled_color;
+
+            .item-container > .weight {
+                background: $disabled_color;
+            }
         }
     }
 }
