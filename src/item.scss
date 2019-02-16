@@ -1,0 +1,182 @@
+//fonts
+
+@font-face {
+    font-family: 'Trebuchet-regular';
+    src: url('./Trebuchet-regular.ttf');
+}
+
+@font-face {
+    font-family: 'Trebuchet-bold';
+    src: url('./Trebuchet-bold.ttf');
+}
+
+//colors
+
+$default_color: #1698d9;
+$hover_color: #2ea8e6;
+$selected_color: #d91667;
+$selected_hover_color: #e62e7a;
+$disabled_color: #b3b3b3;
+
+.item {
+
+    > div {
+        position: relative;
+        background: $default_color;
+        width: 320px;
+        height: 480px;
+        overflow: hidden;
+        clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+        cursor: pointer;
+
+        &:hover {
+            background: $hover_color;
+
+            .weight {
+                background: $hover_color;
+            }
+        }
+    }
+
+    .item-container {
+        width: 312px;
+        height: 472px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        background: #ffffff;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+
+        h4 {
+            font-family: 'Trebuchet-regular';
+            font-size: 16px;
+            line-height: 16px;
+            color: #666666;
+            font-weight: normal;
+            margin: 25px 0 0 0;
+        }
+
+        h1 {
+            font-family: 'Trebuchet-bold';
+            font-size: 48px;
+            line-height: 48px;
+            color: #000000;
+            margin: 20px 0 15px 0;
+        }
+
+        h2 {
+            font-family: 'Trebuchet-bold';
+            font-size: 24px;
+            line-height: 24px;
+            color: #000000;
+            margin: 0 0 22px 0;
+        }
+
+        p {
+            font-family: 'Trebuchet-regular';
+            font-size: 14px;
+            line-height: 14px;
+            color: #666666;
+            margin: 0 0 5px 0;
+        }
+
+        img {
+            width: 100%;
+            position: absolute;
+            bottom: -75px;
+            left: -20px;
+        }
+
+        .weight {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: $default_color;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+
+            .count {
+                font-family: 'Trebuchet-regular';
+                font-size: 42px;
+                line-height: 42px;
+            }
+
+            .unitMeas {
+                font-family: 'Trebuchet-regular';
+                font-size: 21px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    .footer-text {
+        font-family: 'Trebuchet-regular';
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+
+        .buy {
+            font-family: 'Trebuchet-regular';
+            color: $default_color;
+            font-size: 13px;
+            border-bottom: 1px dashed $default_color;
+            cursor: pointer;
+
+            &:hover {
+                color: $hover_color;
+                border-bottom: 1px dashed $hover_color;
+            }
+        }
+    }
+
+    .footer-text.show{
+        display: block;
+    }
+
+    .footer-text.hide{
+        display: none;
+    }
+
+    .selected {
+        background: $selected_color;
+
+        .weight {
+            background: $selected_color;
+        }
+    }
+
+    .selected {
+        &:hover {
+            background: $selected_hover_color;
+
+            .weight {
+                background: $selected_hover_color;
+            }
+        }
+    }
+}
+
+.disabled > div {
+    background: $disabled_color;
+
+    .item-container > .weight {
+        background: $disabled_color;
+    }
+
+    &:hover {
+        background: $disabled_color;
+
+        .item-container > .weight {
+            background: $disabled_color;
+        }
+    }
+}

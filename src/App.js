@@ -19,6 +19,7 @@ class App extends Component {
                 weightCount="0,5"
                 unitMeas="кг"
                 footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy'>купи.</span>]}
+                footerTextSelected="Печень утки разварная с артишоками."
               />
               <Item
                 headText="Сказочное заморское яство"
@@ -28,7 +29,8 @@ class App extends Component {
                 subtext2="2 мыши в подарок"
                 weightCount="2"
                 unitMeas="кг"
-                footerText="Головы щучьи с чесноком да свежайшая сёмгушка."
+                footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy'>купи.</span>]}
+                footerTextSelected="Головы щучьи с чесноком да свежайшая сёмгушка."
               />
               <Item
                 headText="Сказочное заморское яство"
@@ -39,8 +41,8 @@ class App extends Component {
                 subtext3="заказчик доволен"
                 weightCount="5"
                 unitMeas="кг"
-                footerText=""
-                footerText="Печалька, с курой закончился."
+                footerText={["Чего сидишь? Порадуй котэ, ", <span className='buy' >купи.</span>]}
+                footerTextSelected="Филе из цыплят с трюфелями в бульоне."
                 disabled
               />
             </div>
