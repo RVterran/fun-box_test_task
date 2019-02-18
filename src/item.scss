@@ -48,6 +48,7 @@ $disabled_color: #b3b3b3;
         position: absolute;
         top: 4px;
         left: 4px;
+        overflow: hidden;
         clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
 
         h4 {
