@@ -2,12 +2,14 @@
 
 @font-face {
     font-family: 'Trebuchet-regular';
-    src: url('./fonts/Trebuchet-regular.ttf');
+    src: url('fonts/Trebuchet-regular.eot') format('embedded-opentype');
+    src: url('fonts/Trebuchet-regular.eot?#iefix') format('embedded-opentype'), url('fonts/Trebuchet-regular.woff') format('woff'), url('fonts/Trebuchet-regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Trebuchet-bold';
-    src: url('./fonts/Trebuchet-bold.ttf');
+    src: url('fonts/Trebuchet-bold.eot') format('embedded-opentype');
+    src: url('fonts/Trebuchet-bold.eot?#iefix') format('embedded-opentype'), url('fonts/Trebuchet-bold.woff') format('woff'), url('fonts/Trebuchet-bold.ttf') format('truetype');
 }
 
 //colors
@@ -19,16 +21,48 @@ $selected_hover_color: #e62e7a;
 $disabled_color: #b3b3b3;
 
 .item {
-    margin-bottom: 20px;
+    margin: 42px 0 20px 0;
 
     > div {
-        position: relative;
-        background: $default_color;
         width: 320px;
-        height: 480px;
-        overflow: hidden;
-        clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
-        cursor: pointer;
+        height: 438px;
+        background: $default_color;
+        -moz-border-radius: 0 0 10px 10px;
+        -webkit-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 42px;
+            top: -42px;
+            width: 278px;
+            height: 42px;
+            background: $default_color;
+            -moz-border-radius: 0 10px 0 0;
+            -webkit-border-radius: 0 10px 0 0;
+            border-radius: 0 10px 0 0;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -42px;
+            left: 0;
+            border: 21px solid transparent;
+            border-right: 21px solid $default_color;
+            border-bottom: 21px solid $default_color;
+            display: block;
+            width: 0;
+            height: 0;
+        }
+
+        @media all and (-ms-high-contrast:none) {
+            &:before {
+                border-right: 22px solid $default_color;
+            }
+        }
 
         &:hover {
             background: $hover_color;
@@ -36,20 +70,77 @@ $disabled_color: #b3b3b3;
             .weight {
                 background: $hover_color;
             }
+
+            &:after {
+                background: $hover_color;
+            }
+
+            &:before {
+                border-right: 21px solid $hover_color;
+                border-bottom: 21px solid $hover_color;
+            }
+
+            @media all and (-ms-high-contrast:none) {
+                &:before {
+                    border-right: 22px solid $hover_color;
+                }
+            }
         }
     }
 
     .item-container {
-        width: 312px;
-        height: 472px;
         padding: 0 50px;
         box-sizing: border-box;
         background: #ffffff;
+        width: 312px;
+        height: 432px;
+        -moz-border-radius: 0 0 10px 10px;
+        -webkit-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
         position: absolute;
-        top: 4px;
         left: 4px;
-        overflow: hidden;
-        clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+        top: 2px;
+
+        .text-container {
+            position: absolute;
+            top: -40px;
+            z-index: 10;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 40px;
+            top: -40px;
+            width: 272px;
+            height: 40px;
+            background: #ffffff;
+            -moz-border-radius: 0 10px 0 0;
+            -webkit-border-radius: 0 10px 0 0;
+            border-radius: 0 10px 0 0;
+            z-index: 9;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: 0px;
+          border: 20px solid transparent;
+          border-right: 20px solid #ffffff;
+          border-bottom: 20px solid #ffffff;
+          display: block;
+          width: 0;
+          height: 0;
+          z-index: 9;
+        }
+
+        @media all and (-ms-high-contrast:none) {
+            &:after {
+                left: 39.6px;
+                top: -39px;
+            }
+        }
 
         h4 {
             font-family: 'Trebuchet-regular';
@@ -88,11 +179,21 @@ $disabled_color: #b3b3b3;
             font-family: 'Trebuchet-bold';
         }
 
-        img {
-            width: 120%;
+        .image-wrapper {
+            overflow: hidden;
+            width: 312px;
+            height: 266px;
             position: absolute;
-            bottom: -100px;
-            left: -30px;
+            bottom: 0px;
+            left: 0px;
+            border-radius: 10px;
+
+            img {
+                width: 120%;
+                position: absolute;
+                bottom: -100px;
+                left: -30px;
+            }
         }
 
         .weight {
@@ -178,6 +279,21 @@ $disabled_color: #b3b3b3;
         .weight {
             background: $selected_color !important;
         }
+
+        &:after {
+            background: $selected_color !important;
+        }
+
+        &:before {
+            border-right: 21px solid $selected_color !important;
+            border-bottom: 21px solid $selected_color !important;
+        }
+
+        @media all and (-ms-high-contrast:none) {
+            &:before {
+                border-right: 22px solid $selected_color !important;
+            }
+        }
     }
 }
 
@@ -188,6 +304,21 @@ $disabled_color: #b3b3b3;
 
     & > div {
         background: $disabled_color;
+
+        &:after {
+            background: $disabled_color;
+        }
+
+        @media all and (-ms-high-contrast:none) {
+            &:before {
+                border-right: 22px solid $disabled_color;
+            }
+        }
+
+        &:before {
+            border-right: 21px solid $disabled_color;
+            border-bottom: 21px solid $disabled_color;
+        }
 
         .item-container {
             h1, h2, h4, p {
@@ -208,6 +339,15 @@ $disabled_color: #b3b3b3;
 
             .item-container > .weight {
                 background: $disabled_color;
+            }
+
+            &:after {
+                background: $disabled_color;
+            }
+
+            &:before {
+                border-right: 21px solid $disabled_color;
+                border-bottom: 21px solid $disabled_color;
             }
         }
     }

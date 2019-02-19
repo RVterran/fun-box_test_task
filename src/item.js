@@ -66,14 +66,18 @@ class Item extends Component {
             <div className={"item " + (this.props.disabled ? 'disabled' : '')}>
                 <div onClick={this.select} className={(this.state.selected ? 'selected ' + (this.state.hover ? 'selected-hover' : '') : '')}>
                     <div className="item-container">
-                        <h4 className={this.state.hover ? 'hide' : 'show'}>{this.props.headText}</h4>
-                        <h4 className={"selected-text " + (this.state.hover ? 'show' : 'hide')}>{this.props.selectedHoverText}</h4>
-                        <h1>{this.props.titleName}</h1>
-                        <h2>{this.props.titleNameWith}</h2>
-                        <p>{this.props.subtext1}</p>
-                        <p>{this.props.subtext2}</p>
-                        <p>{this.props.subtext3}</p>
-                        <img src={cat}/>
+                        <div className="text-container">
+                            <h4 className={this.state.hover ? 'hide' : 'show'}>{this.props.headText}</h4>
+                            <h4 className={"selected-text " + (this.state.hover ? 'show' : 'hide')}>{this.props.selectedHoverText}</h4>
+                            <h1>{this.props.titleName}</h1>
+                            <h2>{this.props.titleNameWith}</h2>
+                            <p>{this.props.subtext1}</p>
+                            <p>{this.props.subtext2}</p>
+                            <p>{this.props.subtext3}</p>
+                        </div>
+                        <div className="image-wrapper">
+                            <img src={cat} alt="cat"/>
+                        </div>
                         <div className="weight">
                             <span className="count">{this.props.weightCount}</span>
                             <span className="unitMeas">{this.props.unitMeas}</span>
